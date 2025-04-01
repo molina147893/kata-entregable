@@ -31,4 +31,17 @@ class KataTest extends TestCase
         $this->assertEquals("pan x2", $result);
     }
 
+    /**
+     * @test
+     */
+    public function givenProductsWhenAddedAreStoredInTheList()
+    {
+        $kata = new Kata();
+
+        $kata->manageList("añadir leche");
+        $result = $kata->manageList("añadir Pan 2");
+
+        $this->assertEquals("leche x1, pan x2", $result);
+    }
+
 }

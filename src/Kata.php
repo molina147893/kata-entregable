@@ -14,7 +14,18 @@ class Kata
 
         $quantity = isset($parts[2]) ? $parts[2] : "1";
 
-        return $product . " x" . $quantity;
+        if (isset($this->shoppingList[$product])) {
+            $this->shoppingList[$product] .= $quantity;
+        } else {
+            $this->shoppingList[$product] = $quantity;
+        }
+
+        $result = [];
+        foreach ($this->shoppingList as $product => $quantity) {
+            $result[] = "$product x$quantity";
+        }
+
+        return implode(", ", $result);
 
     }
 }
