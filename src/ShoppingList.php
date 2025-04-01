@@ -2,7 +2,7 @@
 
 namespace Deg540\KataEntregable;
 
-class Kata
+class ShoppingList
 {
     private array $shoppingList = [];
 
