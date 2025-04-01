@@ -19,4 +19,16 @@ class KataTest extends TestCase
         $this->assertEquals("leche x1", $result);
     }
 
+    /**
+     * @test
+     */
+    public function givenAnyCuantityOfProductReturnsCuantity()
+    {
+        $kata = new Kata();
+
+        $result = $kata->manageList("añadir Pan 2");
+
+        $this->assertEquals("pan x2", $result);
+    }
+
 }

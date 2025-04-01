@@ -10,9 +10,16 @@ class Kata
 
         $parts = explode(" ", $action);
 
-        $product =  $parts[1];
+        $product =  strtolower($parts[1]);
 
-        return $product . " x1";
+        if(isset($parts[2])){
+            $quantity = $parts[2];
+        }
+        if(!isset($parts[2])){
+            $quantity = "1";
+        }
+
+        return $product . " x" . $quantity;
 
     }
 }
