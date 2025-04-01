@@ -10,13 +10,13 @@ class KataTest extends TestCase
     /**
      * @test
      */
-    public function givenEmptyListReturnsEmpty()
+    public function givenAnyProductHavingEmptyListReturnsProductx1()
     {
         $kata = new Kata();
 
-        $result = $kata->manageList("añadir pan");
+        $result = $kata->manageList("añadir leche");
 
-        $this->assertEquals("pan x1", $result);
+        $this->assertEquals("leche x1", $result);
     }
 
 }
