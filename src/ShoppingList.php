@@ -20,12 +20,13 @@ class ShoppingList
             $this->shoppingList[$product] = $quantity;
         }
 
+        ksort($this->shoppingList);
+
         $result = [];
         foreach ($this->shoppingList as $product => $quantity) {
             $result[] = "$product x$quantity";
         }
 
         return implode(", ", $result);
-
     }
 }

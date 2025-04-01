@@ -38,10 +38,10 @@ class ShoppingListTest extends TestCase
     /**
      * @test
      */
-    public function givenProductsWhenAddedAreStoredInTheList()
+    public function givenProductsWhenAddedAreStoredAlphabeticallyInTheList()
     {
-        $this->shoppingList->manageList("añadir leche");
-        $result = $this->shoppingList->manageList("añadir Pan 2");
+        $this->shoppingList->manageList("añadir Pan 2");
+        $result = $this->shoppingList->manageList("añadir leche");
 
         $this->assertEquals("leche x1, pan x2", $result);
     }
