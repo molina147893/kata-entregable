@@ -15,7 +15,7 @@ class ShoppingList
         $quantity = isset($parts[2]) ? $parts[2] : "1";
 
         if (isset($this->shoppingList[$product])) {
-            $this->shoppingList[$product] .= $quantity;
+            $this->shoppingList[$product] += $quantity;
         } else {
             $this->shoppingList[$product] = $quantity;
         }

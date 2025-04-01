@@ -46,4 +46,16 @@ class ShoppingListTest extends TestCase
         $this->assertEquals("leche x1, pan x2", $result);
     }
 
+    /**
+     * @test
+     */
+    public function givenExistingProductWhenAddedIsStoredInTheList()
+    {
+        $this->shoppingList->manageList("añadir pan");
+        $result = $this->shoppingList->manageList("añadir Pan 2");
+
+        $this->assertEquals("pan x3", $result);
+    }
+
+
 }
