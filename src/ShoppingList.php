@@ -14,9 +14,10 @@ class ShoppingList
 
         $quantity = isset($parts[2]) ? $parts[2] : "1";
 
-        if (isset($this->shoppingList[$product])) {
+        if ($this->productExists($product)) {
             $this->shoppingList[$product] += $quantity;
-        } else {
+        }
+        if(!$this->productExists($product)){
             $this->shoppingList[$product] = $quantity;
         }
 
@@ -28,5 +29,10 @@ class ShoppingList
         }
 
         return implode(", ", $result);
+    }
+
+    public function productExists(string $product): bool
+    {
+        return isset($this->shoppingList[$product]);
     }
 }
